@@ -464,3 +464,26 @@ a:hover {
     transform: translateY(-2px);
     background: linear-gradient(135deg, #2274a5, #ff007f);
 }
+/* Social Links Styling */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: var(--accent-color); /* Use your accent color */
+    font-size: 2rem; /* Make them slightly larger */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #FFFFFF; /* Changes to white on hover */
+    transform: scale(1.2); /* Slightly enlarges on hover */
+}
+
+.social-icon i {
+    /* Shadow effect for the icons */
+    text-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+}
