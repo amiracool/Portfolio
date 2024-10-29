@@ -1,33 +1,37 @@
-function initJourney() {
-    const car = document.getElementById("car");
-    let position = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    // Load journey.html content into the main container
+    fetch("journey.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("journey-container").innerHTML = data;
 
-    // Movement controls
-    function moveCarLeft() {
-        position -= 10;
-        if (position < 0) position = 0;
-        car.style.left = `${position}px`;
-    }
+            // Initialize car movement controls after content is loaded
+            const car = document.querySelector(".car");
+            const road = document.querySelector(".road");
 
-    function moveCarRight() {
-        position += 10;
-        if (position > document.querySelector(".road").offsetWidth - car.offsetWidth) {
-            position = document.querySelector(".road").offsetWidth - car.offsetWidth;
-        }
-        car.style.left = `${position}px`;
-    }
+            if (!car || !road) {
+                console.error("Car or road elements not found. Ensure journey.html structure is correct.");
+                return;
+            }
 
-    // Keyboard events for controlling the car
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "ArrowLeft") moveCarLeft();
-        else if (event.key === "ArrowRight") moveCarRight();
-    });
-}
+            let position = 0;
 
-// Load journey.html and initialize controls
-fetch("journey.html")
-    .then((response) => response.text())
-    .then((data) => {
-        document.getElementById("journey-container").innerHTML = data;
-        initJourney(); // Initialize controls after journey content is loaded
-    });
+            function moveCarLeft() {
+                position = Math.max(0, position - 10);
+                car.style.left = `${position}px`;
+            }
+
+            function moveCarRight() {
+                const maxPosition = road.offsetWidth - car.offsetWidth;
+                position = Math.min(maxPosition, position + 10);
+                car.style.left = `${position}px`;
+            }
+
+            // Add keydown event listener for car movement
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "ArrowLeft") moveCarLeft();
+                if (event.key === "ArrowRight") moveCarRight();
+            });
+        })
+        .catch(error => console.error("Error loading journey.html:", error));
+});

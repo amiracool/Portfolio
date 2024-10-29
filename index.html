@@ -29,28 +29,28 @@
         <p class="typing-container">Socio-technical Developer</p>
     </div>
   </header>
+  <div class="sliding-banner">
+    <div class="sliding-text">
+        Let's Change the World — Let's Change the World — Let's Change the World  Let's Change the World — Let's Change the World — Let's Change the World  Let's Change the World — Let's Change the World — Let's Change the World  Let's Change the World — Let's Change the World -Let's Change the World — Let's Change the World  Let's Change the World — Let's Change the World — Let's Change the World Let's Change the World — Let's Change the World — Let's Change the World  Let's Change the World — Let's Change the World — Let's Change the World  Let's Change the World — Let's Change the World — Let's Change the World  Let's Change the World — Let's Change the World — Let's Change the World 
+    </div>
+</div>
 
   <!-- About Section -->
-  <section id="about">
+  <section class="styled-section" id="about">
     <div class="about-text">
       <h2>Mission</h2>
-      <p>As an experienced social worker with a degree from <a href="https://www.birmingham.ac.uk/">The University of Birmingham</a> and a background in child protection, I’m passionate about creating UX and UI-friendly tech-driven tools that empower people. Through <a href="">FamilyPod</a> and <a href="">Romance Roulette</a>, I’m on a mission to help shift societal standards—promoting healthier relationships and stronger communities. My vision is simple: to make support systems more accessible, compassionate, and effective for everyone.</p>
       <p> As a dedicated social worker with a strong passion for technology, I’m excited to merge these worlds to make a real impact. Currently, I’m deep into a Bootcamp, building skills in full-stack development, JavaScript, and React. This journey has pushed my technical boundaries, helping me create innovative tools and interactive experiences with Python, SQL, Javascript, HTML, CSS, and responsive design.</p>
-      <p>Through projects like FamilyPod and Romance Roulette, I’m honing my expertise in user-focused design and functionality. My goal is to leverage these skills to bring to life tech solutions that foster meaningful connections and empower communities. Each line of code and project marks a step towards building tech with purpose and empathy.</p>
+      <p>Through projects like <a href=" ">FamilyPod</a> and <a href="">Romance Roulette</a>, I’m honing my expertise in user-focused design and functionality. My goal is to leverage these skills to bring to life tech solutions that foster meaningful connections and empower communities. Each line of code and project marks a step towards building tech with purpose and empathy.</p>
     </div>
   </section>
-
-<!-- Journey Section -->
-<!-- Journey Section Container -->
-<div id="journey-container"></div>
-
-<link rel="stylesheet" href="journey-style.css">
-<script src="journey-script.js"></script>
-
-
+  <h1 class="driveme"> Hop in and drive me!</h1>
+  <p class="driveme">(Use the arrow keys!)</p>
+  <div id="journey-container"> </div>
+  <!-- Scripts -->
+  <script src="journey-script.js"></script>
 
   <!-- Skills Section -->
-  <section id="skills">
+  <section class="styled-section" id="skills">
     <h2 class="skills-heading">Technical Skills</h2>
     <div class="technical-skills">
         <span class="skill-text"><i class="fa-brands fa-js skill-icon"></i> JavaScript</span>
@@ -66,7 +66,7 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects">
+  <section class="styled-section" id="projects">
     <h2>Projects</h2>
     <div class="project-card">
         <h3>FamilyPod</h3>
@@ -74,18 +74,35 @@
     <div class="project-card">
         <h3>OhRahRah</h3>
     </div>
-    <a href="#contact" class="btn">Get in Touch</a>
+    <div class="project-card">
+      <h3>Romance Roulette</h3>
+    </div>
     <a href="#more-projects">More Projects</a>
   </section>
 
 
-
-
-
   <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Let's connect! Links to GitHub, LinkedIn, etc.</p>
+  <section class="styled-section" section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://your-server-endpoint.com/contact" method="POST" class="contact-form">
+        <div class="input-group">
+            <input type="text" id="name" name="name" placeholder=" " required>
+            <label for="name">Your Name</label>
+        </div>
+        <div class="input-group">
+            <input type="email" id="email" name="email" placeholder=" " required>
+            <label for="email">Email Address</label>
+        </div>
+        <div class="input-group">
+            <input type="text" id="subject" name="subject" placeholder=" " required>
+            <label for="subject">Subject</label>
+        </div>
+        <div class="input-group">
+            <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+            <label for="message">Your Message</label>
+        </div>
+        <button type="submit" class="submit-btn">✨ Send Message</button>
+    </form>
   </section>
 
 </body>

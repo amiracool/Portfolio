@@ -29,3 +29,8 @@ document.addEventListener("mousemove", (e) => {
   cursor.style.top = `${e.clientY}px`;
 });
 
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Your message has been sent. Thank you!');
+  this.reset();
+});
