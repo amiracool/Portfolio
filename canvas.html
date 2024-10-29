@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Journey</title>
+    <style>
+        /* Basic styling for the canvas */
+        #carCanvas {
+            border: 2px solid #ff007f;
+            background-color: #333333;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Drive Through My Journey</h2>
+    <canvas id="carCanvas" width="800" height="200"></canvas>
+
+    <script>
+        const canvas = document.getElementById('carCanvas');
+        const ctx = canvas.getContext('2d');
+        const carImage = new Image();
+        carImage.src = 'Images/car.png';  // Replace with actual car image path
+
+        let carX = 0;   // Initial car X position
+        let carY = canvas.height / 2 - 25;  // Center the car vertically
+        const carSpeed = 5; // Speed at which car moves
+        const carWidth = 50; // Car image width
+        const carHeight = 50; // Car image height
+
+        // Draw the car
+        function drawCar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the canvas
+            ctx.drawImage(carImage, carX, carY, carWidth, carHeight);  // Draw car
+        }
+
+        // Move car based on key input
+        function moveCar(e) {
+            if (e.key === 'ArrowRight' && carX + carWidth < canvas.width) {
+                carX += carSpeed;
+            } else if (e.key === 'ArrowLeft' && carX > 0) {
+                carX -= carSpeed;
+            }
+            drawCar();
+        }
+
+        // Set up event listener for key presses
+        window.addEventListener('keydown', moveCar);
+
+        // Initial draw
+        carImage.onload = drawCar;
+    </script>
+</body>
+</html>

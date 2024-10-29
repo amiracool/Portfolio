@@ -1,0 +1,142 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Oxanium:wght@200..800&display=swap');
+
+/* General Styling */
+#journey {
+    text-align: center;
+    padding: 50px;
+    font-family: 'Oxanium', sans-serif;
+}
+
+/* Road Container */
+.road-container {
+    overflow: visible;
+    position: relative;
+}
+
+/* Road Styling */
+.road {
+    position: relative;
+    width: 80%;
+    height: 60px;
+    margin: 60px auto;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: visible;
+}
+
+/* Road Markings */
+.road::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-image: repeating-linear-gradient(
+        to right,
+        white 0,
+        white 20px,
+        transparent 20px,
+        transparent 40px
+    );
+    transform: translateY(-50%);
+}
+
+/* Signpost Styling for Milestones */
+.milestone {
+    position: absolute;
+    bottom: 120px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1c6ea4; /* Dark blue color for road sign */
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fff; /* White border for road sign effect */
+    transform: translateX(-50%);
+}
+
+/* Adding the post below each milestone */
+.milestone::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; /* Positioning the post below the milestone */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px; /* Width of the post */
+    height: 60px; /* Height of the post */
+    background-color: #666; /* Grey color for the post */
+    border-radius: 3px; /* Rounded edges for a more realistic post look */
+}
+
+}
+
+/* Controls Instruction Icon Styling */
+.controls-icon {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: #ff007f;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* Car Styling */
+.car {
+    position: absolute;
+    top: -70px; /* Align car with road */
+    left: 0;
+    width: 200px; /* Large enough for visibility */
+    height: auto;
+    z-index: 1;
+    transition: left 0.3s ease; /* Smooth movement */
+}
+
+/* Control Arrow Styling */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.controls-text {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-family: 'Oxanium', sans-serif;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.arrow-control {
+    display: inline-block;
+    font-size: 2rem;
+    color: #fff;
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background 0.3s;
+}
+
+.arrow-control:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+}
+
+
+
+
