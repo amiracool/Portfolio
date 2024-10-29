@@ -137,6 +137,34 @@
     background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
 }
 
-
+@media (max-width: 768px) {
+    .road-container {
+      height: 150px;
+    }
+  
+    .car {
+      width: 60px;
+    }
+  
+    .milestone {
+      font-size: 14px;
+      bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .road-container {
+      height: 120px;
+    }
+  
+    .car {
+      width: 50px;
+    }
+  
+    .milestone {
+      font-size: 12px;
+      bottom: 25px;
+    }
+  }
 
 
