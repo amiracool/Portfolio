@@ -44,20 +44,22 @@
 }
 
 /* Signpost Styling for Milestones */
+/* Milestone Styling */
 .milestone {
-    position: absolute;
-    bottom: 120px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #1c6ea4; /* Dark blue color for road sign */
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 1rem;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    border: 2px solid #fff; /* White border for road sign effect */
-    transform: translateX(-50%);
+  position: absolute;
+  bottom: 120px; /* Adjusted so they’re closer to the road */
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff007f;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  border: 2px solid #fff;
+  transform: translateX(-50%);
 }
+
 
 /* Adding the post below each milestone */
 .milestone::after {
@@ -137,34 +139,21 @@
     background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
 }
 
+
+/* Tablet Screens (up to 768px) */
 @media (max-width: 768px) {
-    .road-container {
-      height: 150px;
-    }
-  
-    .car {
-      width: 60px;
-    }
-  
     .milestone {
-      font-size: 14px;
-      bottom: 30px;
+        font-size: 0.8rem; /* Reduced size */
+        padding: 0.8% 1.5%;
+        bottom: 200%; /* Increase bottom to move signs higher */
     }
-  }
-  
-  @media (max-width: 480px) {
-    .road-container {
-      height: 120px;
-    }
-  
-    .car {
-      width: 50px;
-    }
-  
+}
+
+/* Mobile Screens (up to 480px) */
+@media (max-width: 480px) {
     .milestone {
-      font-size: 12px;
-      bottom: 25px;
+        font-size: 0.6rem; /* Smaller size */
+        padding: 0.5% 0.4%;
+        bottom: 50%; /* Further increase to bring signs higher on mobile */
     }
-  }
-
-
+}

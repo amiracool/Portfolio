@@ -487,3 +487,25 @@ a:hover {
     /* Shadow effect for the icons */
     text-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
 }
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #journey-container {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .driveme {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #journey-container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .driveme {
+        font-size: 1.2rem;
+    }
+}
