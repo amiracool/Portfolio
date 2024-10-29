@@ -151,9 +151,7 @@
 
 /* Mobile Screens (up to 480px) */
 @media (max-width: 480px) {
-    .milestone {
-        font-size: 0.6rem; /* Smaller size */
-        padding: 0.5% 0.4%;
-        bottom: 50%; /* Further increase to bring signs higher on mobile */
+      #journey.road .milestone {
+        bottom: 200% !important; /* Enforce 200% bottom positioning */
     }
 }

@@ -66,3 +66,28 @@ document.addEventListener('keydown', (event) => {
         car.style.left = `${carPosition}%`;
     }
 });
+function handleSwipe(direction) {
+  console.log("Swiped:", direction);
+  // Add any basic functionality here
+}
+function moveCarRight() {
+  const car = document.querySelector(".car"); // Ensure the selector matches the car's class
+  car.style.left = "someValue"; // This line is where the error is likely happening
+}
+// JavaScript to apply bottom 200% on mobile screens
+function adjustMilestonePosition() {
+  const milestones = document.querySelectorAll(".milestone");
+  if (window.innerWidth <= 480) {  // Check if mobile screen
+      milestones.forEach(milestone => {
+          milestone.style.bottom = "200%";
+      });
+  } else {
+      milestones.forEach(milestone => {
+          milestone.style.bottom = ""; // Reset for larger screens
+      });
+  }
+}
+
+// Run on load and resize
+window.addEventListener("load", adjustMilestonePosition);
+window.addEventListener("resize", adjustMilestonePosition);

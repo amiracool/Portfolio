@@ -487,25 +487,93 @@ a:hover {
     /* Shadow effect for the icons */
     text-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
 }
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    #journey-container {
-        padding: 15px;
-        max-width: 90%;
-    }
 
-    .driveme {
-        font-size: 1.5rem;
+/* Default Styling (Desktops and Larger Screens) */
+body {
+    font-size: 16px; /* Default font size */
+    /* Other default styles */
+}
+
+/* Large Desktop Screens (1920px and up) */
+@media (min-width: 1920px) {
+    body {
+        font-size: 18px; /* Slightly larger font for high-resolution screens */
+    }
+    .container {
+        max-width: 1600px; /* Limit container width for large screens */
     }
 }
 
-@media (max-width: 480px) {
-    #journey-container {
-        padding: 10px;
-        max-width: 100%;
+/* Medium to Large Desktops (1200px and up) */
+@media (max-width: 1200px) {
+    body {
+        font-size: 15px; /* Adjust font size */
     }
+    .container {
+        max-width: 1000px; /* Restrict max-width */
+    }
+}
 
-    .driveme {
-        font-size: 1.2rem;
+/* Tablet Screens (768px - 1199px) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 750px;
+        padding: 0 15px; /* Add padding for readability */
+    }
+    .nav, .sidebar {
+        display: none; /* Hide sidebar or secondary nav if needed */
+    }
+    .milestone {
+        font-size: 0.9rem; /* Reduce milestone font size */
+        transform: translate(-50%, -50%); /* Adjust position for tablet */
+    }
+}
+
+/* Mobile Screens (481px - 767px) */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px; /* Smaller font for smaller devices */
+    }
+    .container {
+        max-width: 95%;
+        padding: 0 10px;
+    }
+    .header, .footer {
+        text-align: center;
+    }
+    .milestone {
+        font-size: 0.8rem;
+        transform: translate(-50%, -75%); /* Move up further on smaller screens */
+    }
+    .road {
+        height: 40px; /* Reduce road height for mobile */
+    }
+    .car {
+        width: 60px; /* Smaller car for mobile */
+    }
+}
+
+/* Small Mobile Screens (Up to 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    .container {
+        max-width: 90%;
+        padding: 0 5px;
+    }
+    .header, .footer {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+    .milestone {
+        font-size: 0.6rem; /* Reduce milestone text size */
+        transform: translate(-50%, -100%); /* Move signs even higher on small screens */
+    }
+    .road {
+        height: 30px;
+    }
+    .car {
+        width: 50px;
     }
 }

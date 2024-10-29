@@ -80,3 +80,10 @@ function moveCarRight() {
         car.style.left = `${carPosition}%`;
     }
 }
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.innerWidth <= 480) {
+        document.querySelectorAll(".milestone").forEach(milestone => {
+            milestone.style.bottom = "200%";
+        });
+    }
+});
