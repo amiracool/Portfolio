@@ -12,7 +12,7 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  
+  <div class="cursor"></div>
   <!-- Header -->
   <header class="animated-header">
     <nav>
@@ -112,5 +112,13 @@
   </a>
 </div>
 
+// Custom Cursor JavaScript
+<script> const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+});
+</script>
 </section>
 

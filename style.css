@@ -17,6 +17,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none;
 }
 .intro {
     background: url('Images/circuit.png') center/cover no-repeat;
@@ -28,7 +29,6 @@ body {
     font-family: 'Oxanium', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-
 }
 
 /* Header and Footer Styling */
