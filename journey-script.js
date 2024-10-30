@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Load journey.html content into the main container
     fetch("journey.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("journey-container").innerHTML = data;
 
-            // Initialize car movement controls after content is loaded
             const car = document.querySelector(".car");
             const road = document.querySelector(".road");
 
@@ -14,17 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            let position = 0;
+            // Align car's initial position with the left edge of the road
+            const roadRect = road.getBoundingClientRect();
+            let carPosition = 0;
+            car.style.position = 'absolute';
+            car.style.left = `${roadRect.left}px`;
+
+            // Set movement boundaries based on road dimensions
+            const maxPosition = roadRect.width - car.offsetWidth;
 
             function moveCarLeft() {
-                position = Math.max(0, position - 10);
-                car.style.left = `${position}px`;
+                carPosition = Math.max(0, carPosition - 20); // Ensure car stays within left boundary
+                car.style.left = `${roadRect.left + carPosition}px`;
             }
 
             function moveCarRight() {
-                const maxPosition = road.offsetWidth - car.offsetWidth;
-                position = Math.min(maxPosition, position + 10);
-                car.style.left = `${position}px`;
+                carPosition = Math.min(maxPosition, carPosition + 20); // Ensure car stays within right boundary
+                car.style.left = `${roadRect.left + carPosition}px`;
             }
 
             // Add keydown event listener for car movement
@@ -32,58 +36,35 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (event.key === "ArrowLeft") moveCarLeft();
                 if (event.key === "ArrowRight") moveCarRight();
             });
+
+            // Swipe events for touchscreen devices
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener("touchstart", (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            document.addEventListener("touchend", (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                if (touchEndX < touchStartX) {
+                    moveCarLeft(); // Swiped left
+                } else if (touchEndX > touchStartX) {
+                    moveCarRight(); // Swiped right
+                }
+            }
+
+            // Adjust milestone positions for mobile
+            if (window.innerWidth <= 480) {
+                document.querySelectorAll(".milestone").forEach(milestone => {
+                    milestone.style.bottom = "200%";
+                });
+            }
         })
         .catch(error => console.error("Error loading journey.html:", error));
 });
 
-// JavaScript for moving the car with swipe gestures
-const car = document.querySelector('.car');
-let carPosition = 10; // Starting position as a percentage
-const milestones = [10, 55, 90]; // Milestone positions in percentages
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-document.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
-
-function handleSwipe() {
-    if (touchEndX < touchStartX) {
-        // Swiped left
-        moveCarLeft();
-    } else if (touchEndX > touchStartX) {
-        // Swiped right
-        moveCarRight();
-    }
-}
-
-function moveCarLeft() {
-    // Find the previous milestone position
-    const prevMilestone = milestones.filter((pos) => pos < carPosition).pop();
-    if (prevMilestone !== undefined) {
-        carPosition = prevMilestone;
-        car.style.left = `${carPosition}%`;
-    }
-}
-
-function moveCarRight() {
-    // Find the next milestone position
-    const nextMilestone = milestones.find((pos) => pos > carPosition);
-    if (nextMilestone !== undefined) {
-        carPosition = nextMilestone;
-        car.style.left = `${carPosition}%`;
-    }
-}
-document.addEventListener("DOMContentLoaded", () => {
-    if (window.innerWidth <= 480) {
-        document.querySelectorAll(".milestone").forEach(milestone => {
-            milestone.style.bottom = "200%";
-        });
-    }
-});

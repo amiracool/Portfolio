@@ -140,18 +140,131 @@
 }
 
 
-/* Tablet Screens (up to 768px) */
-@media (max-width: 768px) {
-    .milestone {
-        font-size: 0.8rem; /* Reduced size */
-        padding: 0.8% 1.5%;
-        bottom: 200%; /* Increase bottom to move signs higher */
+/* Default Styling (Desktops and Larger Screens) */
+body {
+    font-size: 16px; /* Default font size */
+    /* Other default styles */
+}
+
+/* Large Desktop Screens (1920px and up) */
+@media (min-width: 1920px) {
+    body {
+        font-size: 18px; /* Slightly larger font for high-resolution screens */
+    }
+    .container {
+        max-width: 1600px; /* Limit container width for large screens */
     }
 }
 
-/* Mobile Screens (up to 480px) */
-@media (max-width: 480px) {
-      #journey.road .milestone {
-        bottom: 200% !important; /* Enforce 200% bottom positioning */
+/* Medium to Large Desktops (1200px and up) */
+@media (max-width: 1200px) {
+    body {
+        font-size: 15px; /* Adjust font size */
+    }
+    .container {
+        max-width: 1000px; /* Restrict max-width */
     }
 }
+
+/* Tablet Screens (768px - 1199px) */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 750px;
+        padding: 0 15px; /* Add padding for readability */
+    }
+    .nav, .sidebar {
+        display: none; /* Hide sidebar or secondary nav if needed */
+    }
+    .milestone {
+        font-size: 0.9rem; /* Reduce milestone font size */
+        transform: translate(-50%, -50%); /* Adjust position for tablet */
+    }
+}
+
+/* Mobile Screens (481px - 767px) */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px; /* Smaller font for smaller devices */
+    }
+    .container {
+        max-width: 95%;
+        padding: 0 10px;
+    }
+    .header, .footer {
+        text-align: center;
+    }
+    .milestone {
+        font-size: 0.8rem;
+        transform: translate(-50%, -75%); /* Move up further on smaller screens */
+    }
+    .road {
+        height: 40px; /* Reduce road height for mobile */
+    }
+    .car {
+        width: 60px; /* Smaller car for mobile */
+    }
+}
+
+/* Small Mobile Screens (Up to 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+
+    .container {
+        max-width: 90%;
+        padding: 0 5px;
+    }
+
+    .header, .footer {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .milestone {
+        width: 60px;
+        padding: 3px;
+        font-size: 0.5rem;
+        text-align: center;
+        position: absolute;
+        bottom: 40px; /* Adjusts the entire milestone box positioning */
+        left: 50%; /* Centers horizontally */
+        transform: translateX(-50%); /* Keeps horizontal centering */
+        background-color: #ff007f;
+        color: white;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Add post extending from the milestone to the road */
+    .milestone::after {
+        content: '';
+        position: absolute;
+        top: 100%; /* Positions the post below the milestone box */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px; /* Post width */
+        height: 30px; /* Adjust height to connect to the road */
+        background-color: #666; /* Post color */
+    }
+    
+    
+
+    .road {
+        height: 30px;
+    }
+
+    .car {
+        width: 50px; /* Smaller car size for mobile */
+        top: -30px; /* Adjust car's position lower on the road */
+        transform: translateY(0); /* Reset translate for consistent positioning */
+    }
+
+    /* Adjust "Hop in and drive" text for visibility */
+    .driveme {
+        font-size: 1rem;
+        margin-top: 20px; /* Add extra spacing to keep it above the road */
+        z-index: 20; /* Ensure it's above other elements */
+    }
+}
+

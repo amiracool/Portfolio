@@ -575,5 +575,6 @@ body {
     }
     .car {
         width: 50px;
+        bottom: 50% !important;
     }
 }
