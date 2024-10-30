@@ -267,6 +267,45 @@ a:hover {
     transition: color 0.3s ease;
 }
 
+/* Figma Icon Specific Styling */
+.figma-icon {
+    width: 1.5rem; /* Matches other icons' size */
+    height: auto;
+    filter: brightness(0) invert(1); /* Converts to match text color */
+    transition: filter 0.3s ease;
+}
+
+/* Hover effect to match other skill icons */
+.skill-text:hover .figma-icon {
+    filter: brightness(1) invert(0); /* Changes to accent color on hover */
+}
+/* Skill Text Container */
+.skill-text {
+    display: flex; /* Aligns icon and text in a row */
+    align-items: center; /* Centers icon and text vertically */
+    gap: 8px;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(34, 116, 165, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Figma Icon Adjustments */
+.figma-icon {
+    width: 1.5rem; /* Match other icons' size */
+    height: auto;
+    filter: brightness(0) invert(1); /* Color adjustment */
+    transition: filter 0.3s ease;
+}
+
+/* Hover Effect for Consistency */
+.skill-text:hover .figma-icon {
+    filter: brightness(1) invert(0); /* Changes to accent color on hover */
+}
+
+
 .skill-text:hover .skill-icon {
     color: var(--accent-color);
 }
