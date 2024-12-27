@@ -69,44 +69,76 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section class="styled-section" id="projects">
     <h2>Projects</h2>
-    <div class="project-card">
-        <h3>FamilyPod</h3>
+    <div class="project-grid">
+      <!-- FamilyPod (Coming Soon) -->
+      <div class="project-card coming-soon">
+        <h3>FamilyPod (Coming Soon)</h3>
+        <div class="project-preview">
+          <div class="placeholder-preview">
+            <p>Preview Coming Soon</p>
+          </div>
+        </div>
+        <p>An innovative socio-technical platform aiming to support families with assessments and therapeutic tools. Currently under development—stay tuned for updates!</p>
+        <button class="preview-link disabled" disabled>🔒 Coming Soon</button>
+      </div>
+  
+      <!-- OhRahRah -->
+      <div class="project-card">
+        <h3>OhRahRah</h3>
+        <div class="project-preview">
+          <iframe 
+            src="http://www.ohrahrah.co.uk" 
+            title="OhRahRah Preview"
+            loading="lazy"></iframe>
+        </div>
+        <p>A luxury pet grooming service featuring a custom-built website.</p>
+        <a href="http://www.ohrahrah.co.uk" target="_blank" class="preview-link">🔗 Visit OhRahRah</a>
+      </div>
+  
+      <!-- Romance Roulette -->
+      <div class="project-card">
+        <h3>Romance Roulette - The App</h3>
+        <div class="project-preview">
+          <iframe 
+            src="https://www.instagram.com/familypod_games/" 
+            title="Romance Roulette Preview"
+            loading="lazy"></iframe>
+        </div>
+        <p>An app designed to promote healthy relationships through engaging, interactive games. Currently in development. </p>
+        <a href="https://www.instagram.com/familypod_games/" target="_blank" class="preview-link">🔗 View App</a>
+      </div>
+  
+      <!-- Mindomo Map -->
+      <div class="project-card">
+        <h3>Mindomo Map</h3>
+        <div class="project-preview">
+          <iframe 
+            src="https://www.mindomo.com/mindmap/e05672d326304323a96ec6ecc74f0181" 
+            title="Mindomo Map Preview"
+            loading="lazy"></iframe>
+        </div>
+        <p>A detailed mind map showcasing my learning journey and project planning.</p>
+        <a href="https://www.mindomo.com/mindmap/e05672d326304323a96ec6ecc74f0181" target="_blank" class="preview-link">🔗 View Mind Map</a>
+      </div>
     </div>
-    <div class="project-card">
-        <h3>OhRahRah <a href="http://www.ohrahrah.co.uk"></a></h3>
-    </div>
-    <div class="project-card">
-      <h3>Romance Roulette</h3>
-    </div>
-    <a href="https://github.com/amiracool">More Projects></a></a>
   </section>
+  
+  
+      
 
-<!-- Contact Section -->
+  <!-- Contact Section -->
 <section class="styled-section" id="contact">
   <h2>Contact Me</h2>
-  <form action="https://64a092f5-a152-495b-a542-925339c4f189-00-2ppzggne259du.riker.replit.dev/send" method="POST" class="contact-form">
-      <div class="input-group">
-          <input type="text" id="name" name="name" placeholder=" " required>
-          <label for="name">Your Name</label>
-      </div>
-      <div class="input-group">
-          <input type="email" id="email" name="email" placeholder=" " required>
-          <label for="email">Email Address</label>
-      </div>
-      <div class="input-group">
-          <input type="text" id="subject" name="subject" placeholder=" " required>
-          <label for="subject">Subject</label>
-      </div>
-      <div class="input-group">
-          <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
-          <label for="message">Your Message</label>
-      </div>
-      <button type="submit" class="submit-btn">✨ Send Message</button>
-  </form>
-  </section>
+  <div class="contact-options">
+    <a href="https://calendly.com/amiracoolhaque/30min" target="_blank" class="contact-btn">📅 Schedule on Calendly</a>
+    <a href="mailto:amirahaque@outlook.com" class="contact-btn">📧 Email Me</a>
+    <a href="tel:+447889263789" class="contact-btn">📞 Call Me</a>
+    <a href="sms:+447889263789" class="contact-btn">📱 Text Me</a>
+  </div>
+</section>
+
   <!-- Social Links -->
 <div class="social-links">
   <a href="https://www.linkedin.com/in/syedaamirahaque" target="_blank" aria-label="LinkedIn" class="social-icon">
@@ -121,12 +153,11 @@
 
 </section>
 
-// Create and add the custom cursor element
 <script>const cursor = document.createElement("div");
 cursor.classList.add("cursor");
 document.body.appendChild(cursor);
 
-// Track mouse movement and update custom cursor position
+
 document.addEventListener("mousemove", (e) => {
     cursor.style.left = `${e.clientX}px`;
     cursor.style.top = `${e.clientY}px`;
